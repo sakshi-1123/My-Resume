@@ -1,2 +1,1 @@
-# My-Resume
-Please check this for more information...
+
