@@ -1,0 +1,294 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f4f9;
+  color: #333;
+}
+
+nav {
+  background: #006699; /* Navbar background */
+  padding: 1em;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #ffd700; /* Hover color: gold */
+}
+
+nav a.active {
+  color: #ff9800;
+  border-bottom: 2px solid #ff9800;
+}
+
+.welcome {
+  max-width: 800px;
+  margin: 2em auto 1em auto;
+  background: #e3f2fd;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.bio, .resume {
+  max-width: 800px;
+  margin: 1em auto 2em auto;
+  background: white;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.profile-pic {
+  width: 120px; /* Normal size */
+  border-radius: 50%; /* Circular image */
+  display: block;
+  margin: 1em auto;
+}
+
+h1, h2 {
+  color: #444;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+  margin-top: 1em;
+  background: #006699; /* Footer background matches navbar */
+  color: white;
+  border-top: 2px solid #005580;
+}
+/* Home page exclusive styles */
+body.home-page {
+  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  min-height: 100vh;
+}
+
+body.home-page nav {
+  background: linear-gradient(90deg, #ff512f 60%, #dd2476 100%);
+  box-shadow: 0 4px 24px rgba(221,36,118,0.10);
+}
+
+body.home-page .welcome {
+  background: rgba(255,255,255,0.98);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(255,81,47,0.10);
+  padding: 3em 2em 2.5em 2em;
+  margin-top: 4em;
+  margin-bottom: 2.5em;
+  position: relative;
+  overflow: hidden;
+}
+
+body.home-page .welcome h1 {
+  color: #ff512f;
+  font-size: 2.8em;
+  margin-bottom: 0.7em;
+  letter-spacing: 2px;
+  text-shadow: 2px 4px 12px #ffb19944;
+  animation: popIn 1.2s;
+}
+
+body.home-page .welcome p {
+  font-size: 1.25em;
+  color: #444;
+  margin-bottom: 1.5em;
+  line-height: 1.8;
+}
+
+body.home-page .welcome::before {
+  content: "";
+  position: absolute;
+  top: -60px; left: -60px;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, #ff512f55 60%, transparent 100%);
+  z-index: 0;
+  border-radius: 50%;
+  animation: float 4s infinite alternate;
+}
+
+body.home-page .welcome::after {
+  content: "🌟";
+  display: block;
+  font-size: 2.5em;
+  margin-top: 1.2em;
+  animation: sparkle 1.5s infinite alternate;
+  z-index: 1;
+  position: relative;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.8);}
+  to { opacity: 1; transform: scale(1);}
+}
+
+@keyframes float {
+  from { transform: translateY(0);}
+  to { transform: translateY(30px);}
+}
+
+/* Responsive for home page */
+@media (max-width: 600px) {
+  body.home-page .welcome {
+    padding: 1.5em 0.5em;
+    margin: 2em 0.5em;
+  }
+  body.home-page .welcome h1 {
+    font-size: 2em;
+  }
+}
+/* Bio-data page exclusive styles */
+body.bio-page {
+  background: linear-gradient(135deg, #c2e9fb 0%, #81a4fd 100%);
+  min-height: 100vh;
+}
+
+body.bio-page nav {
+  background: linear-gradient(90deg, #005c97 60%, #363795 100%);
+  box-shadow: 0 4px 24px rgba(54,55,149,0.10);
+}
+
+body.bio-page .bio {
+  background: rgba(255,255,255,0.97);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(54,55,149,0.10);
+  padding: 2.5em 2em 2em 2em;
+  margin-top: 3em;
+  margin-bottom: 2.5em;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInBio 1.2s;
+}
+
+body.bio-page .bio h2 {
+  color: #005c97;
+  font-size: 2em;
+  margin-bottom: 1em;
+  letter-spacing: 1px;
+  text-shadow: 1px 2px 8px #81a4fd44;
+}
+
+body.bio-page .bio p {
+  font-size: 1.15em;
+  color: #333;
+  margin-bottom: 1em;
+  line-height: 1.7;
+}
+
+body.bio-page .bio::before {
+  content: "";
+  position: absolute;
+  top: -40px; left: -40px;
+  width: 120px; height: 120px;
+  background: radial-gradient(circle, #81a4fd55 60%, transparent 100%);
+  z-index: 0;
+  border-radius: 50%;
+  animation: floatBio 4s infinite alternate;
+}
+
+@keyframes fadeInBio {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes floatBio {
+  from { transform: translateY(0);}
+  to { transform: translateY(20px);}
+}
+
+/* Resume page styles to match bio-data page */
+body.resume-page {
+  background: linear-gradient(135deg, #c2e9fb 0%, #81a4fd 100%);
+  min-height: 100vh;
+}
+
+body.resume-page nav {
+  background: linear-gradient(90deg, #005c97 60%, #363795 100%);
+  box-shadow: 0 4px 24px rgba(54,55,149,0.10);
+}
+
+body.resume-page .resume {
+  background: rgba(255,255,255,0.97);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(54,55,149,0.10);
+  padding: 1em 2.5em 1em 2.5em;   /* Less vertical, more horizontal padding */
+  margin-top: 1em;                /* Less margin above */
+  margin-bottom: 1em;             /* Less margin below */
+  position: relative;
+  overflow: hidden;
+  animation: fadeInResume 1.2s;
+  max-width: 950px;               /* Wider card */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.resume-page .resume h2 {
+  color: #005c97;
+  font-size: 2em;
+  margin-bottom: 1em;
+  letter-spacing: 1px;
+  text-shadow: 1px 2px 8px #81a4fd44;
+}
+
+body.resume-page .resume p,
+body.resume-page .resume li {
+  font-size: 1.15em;
+  color: #333;
+  margin-bottom: 1em;
+  line-height: 1.7;
+}
+
+body.resume-page .resume ul {
+  margin-bottom: 1.2em;
+  padding-left: 1.2em;
+}
+
+body.resume-page .profile-pic {
+  width: 120px;
+  border-radius: 50%;
+  display: block;
+  margin: 1em auto 2em auto;
+  box-shadow: 0 4px 16px #81a4fd44;
+  border: 4px solid #c2e9fb;
+  background: #fff;
+}
+
+body.resume-page .resume::before {
+  content: "";
+  position: absolute;
+  top: -40px; left: -40px;
+  width: 120px; height: 120px;
+  background: radial-gradient(circle, #81a4fd55 60%, transparent 100%);
+  z-index: 0;
+  border-radius: 50%;
+  animation: floatResume 4s infinite alternate;
+}
+
+@keyframes fadeInResume {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes floatResume {
+  from { transform: translateY(0);}
+  to { transform: translateY(20px);}
+}
+
+/* Responsive for resume page */
+@media (max-width: 600px) {
+  body.resume-page .resume {
+    padding: 1.2em 0.5em;
+    margin: 1.5em 0.5em;
+  }
+  body.resume-page .resume h2 {
+    font-size: 1.3em;
+  }
+}
